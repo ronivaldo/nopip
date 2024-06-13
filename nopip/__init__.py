@@ -12,7 +12,7 @@ class Install:
         try:
             # Se verbose for True, capture output; se não, não capture
             process = subprocess.run([python_exe, "-m", "pip"] + command,
-                                     check=True, capture_output=not verbose,
+                                     check=True, capture_output=verbose,
                                      text=True)
             output = process.stdout
         except subprocess.CalledProcessError as cpe:
