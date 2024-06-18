@@ -12,15 +12,16 @@ from nopip import install
 try:
     from flask import Flask
 except:
-    install.module('Flask==2.2.3')
+    install.module('Flask==2.2.3', verbose=True)
+    from flask import Flask
 ```
 
 ### Other examples
 
 ```python
-install.from_requirements('./requirements.txt')
-install.module('requests')
-install.modules(['requests==2.5.1', 'beautifulsoup4==4.10.0'])
+install.from_requirements('./requirements.txt', verbose=True)
+install.module('requests', verbose=True)
+install.modules(['requests==2.5.1', 'beautifulsoup4==4.10.0'], verbose=True)
 ```
 
 ## Installation
@@ -32,7 +33,6 @@ If you find it challenging to copy the entire nopip directory, there's an even s
 # Note
 
 I'd like to clarify that I don't hate `pip` or intend to undermine its value in the Python ecosystem. `pip` is an essential tool for managing Python packages and their dependencies. However, I have observed that some people, particularly beginners or those working on very simple applications, might face issues with `pip` when trying to set up their environment or resolve dependencies. The `nopip` module aims to provide an alternative way to install packages for those specific scenarios where ease of use is a priority. It's important to note that using `nopip` is not a substitute for proper dependency management, and it's always recommended to use `pip`, `pipenv`, or `poetry` for production code.
-
 
 # Collaboration
 
